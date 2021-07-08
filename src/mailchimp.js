@@ -1,7 +1,8 @@
 const mailchimp = require("@mailchimp/mailchimp_marketing")
+const { apiKey } = require("./credentials.json")
 
 mailchimp.setConfig({
-    apiKey: "api key here",
+    apiKey: "86b8c1cef0aba53c9fead5e61140926f-us6",
     server: "us6"
 })
 

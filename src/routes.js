@@ -2,6 +2,7 @@ const express = require("express")
 const router = express.Router()
 
 const mailchimp = require("./mailchimp")
+const { id } = require("./credentials.json")
 
 const path = require("path")
 
@@ -22,7 +23,7 @@ router.post("/", async (req, res) => {
     }
 
     try{
-        await mailchimp.lists.addListMember("id", data)
+        await mailchimp.lists.addListMember(id, data)
         
         return res.sendFile(path.join(__dirname, "../public/html/success.html"))
     }catch(err){
